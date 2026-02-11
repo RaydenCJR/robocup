@@ -56,22 +56,23 @@ void setup()
   // evo.writeToDisplay(leftMotor.getAngle(), 80, 56);
   // evo.drawDisplay();
 
-  motors.moveDegrees(-4800,-4800, 120);
+  motors.moveDegrees(-4700,-4700, 120);
   motors.moveDegrees(-2000, 2000, 125);
-  motors.moveDegrees(4500, 4500, 60);
+  motors.moveDegrees(4500, 4500, 100);
   while (rc > 100){
     csright.getRawRGBC(&rr, &rg, &rb, &rc);
-    walltrack(2, 13, 1500, 230, 1); //kp kd speed targetDistance wallSide
+    walltrack(2, 14, 1500, 145, 1); //kp kd speed targetDistance wallSide
   }
   leftMotor.brake();
   rightMotor.brake();
   evo.playTone(1000, 200);
   motors.moveDegrees(2000, 2000, 125);
-  while (rc > 93){
+  while (rc > 100){
     csright.getRawRGBC(&rr, &rg, &rb, &rc);
-    motors.move(0, 1500);
+    motors.move(-1500, 1500);
   }
   motors.brake();
+  linetrack(55, 20, 4100);
 }
 
 void loop()

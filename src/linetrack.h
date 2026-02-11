@@ -11,6 +11,9 @@ void linetrack(int kp, int kd, float speed){   //10-100
     int rightValue = map(rc, rinputmin, rinputmax, outputMin, outputMax);
     int error = leftValue - rightValue;
 
+
+
+
     // Calculate derivative
     static int lastError = 0;
     int derivative = error - lastError;

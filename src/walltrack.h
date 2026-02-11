@@ -26,8 +26,13 @@ void walltrack(int kp, int kd, int speed, int targetDistance, int wallSide){
     evo.writeToDisplay(int(currentDist), 0, 56, true, true);
     leftMotor.run(lss);
     rightMotor.run(rss);
+
+
 }
 
-// void walltrack2(){
+void walltrack2(){
+    static int currentDist = 0;
+    currentDist = rightds.getDistance();
 
-// }
+    if 
+}
